@@ -1,0 +1,235 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+body {
+      font-family: "Kumbh Sans", sans-serif;
+      background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%))
+            no-repeat;
+      overflow: hidden;
+      min-height: 100vh;
+      font-size: 12px;
+}
+
+h1 {
+      font-size: 35px;
+      color: hsl(238, 29%, 16%);
+}
+
+main {
+      height: 100vh;
+      display: grid;
+      place-items: center;
+}
+
+.card {
+      background: #fff;
+      width: 90%;
+      max-width: 350px;
+      position: relative;
+      border-radius: 20px;
+      margin-top: 50px;
+      box-shadow: 0px 5px 20px 0px rgb(0 0 0 / 70%);
+}
+
+.card__image {
+      position: absolute;
+      top: -106px;
+      left: 5%;
+}
+
+.card__image .hide-woman-on-mobile {
+      display:none;
+}
+
+.card__image_overlay {
+      position: absolute;
+      left: 13%;
+}
+
+.card__image_box {
+      display: none;
+}
+
+.card__image_overlay .hide-on-mobile {
+      display: none;
+}
+
+.card__container {
+      padding: 50px 25px;
+}
+
+.card__container .card__header {
+      text-align: center;
+      padding-top: 100px;
+      padding-bottom: 25px;
+}
+
+.faq__question__box {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid hsl(240, 5%, 91%);
+      cursor: pointer;
+}
+
+.faq__question__box:hover .box_content-question {
+      color: hsl(14, 88%, 65%);
+}
+.question__box_content {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+}
+
+.box_content-question {
+      font-size: 13px;
+}
+
+.box_content-answer {
+      display: block;
+      visibility: hidden;
+      padding-right: 40px;
+      line-height: 1.5;
+      animation: removeText 0.4s linear forwards;
+      transition: visibility 0.4s ease-in-out;
+      
+}
+
+.show-text .box_content-answer {
+      animation: showText 0.4s linear forwards;
+      visibility: visible;
+}
+
+.show-text .box_content-answer p {
+      color:hsl(237, 12%, 33%);
+}
+
+@keyframes showText {
+      0% {opacity:0; height: 0;}
+      25% {opacity:0.25; height: 25%;}
+      50% {opacity:0.5; height: 50%;}
+      75% {opacity:0.75; height: 75%;}
+      100% {opacity:1; height: 100%;}
+}
+
+@keyframes removeText {
+      from {opacity:1; height: 100%}
+      to {opacity:0; height: 0}
+}
+
+
+
+.question_btn {
+      display: block;
+      border: none;
+      cursor: pointer;
+      background: transparent url(images/icon-arrow-down.svg) center no-repeat;
+      height: 14px;
+      width: 14px;
+      animation: rotateBack 0.4s linear forwards;
+}
+
+.show-text .question_btn {
+      animation: rotate 0.4s linear forwards;
+}
+
+@keyframes rotate {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(-180deg);}
+}
+
+@keyframes rotateBack {
+      from {
+            transform: rotate(180deg);
+      }
+      to {
+            transform: rotate(0deg);
+      }
+}
+
+.show-text .box_content-question {
+      font-weight: bold;
+}
+
+@media screen and (max-width: 1199px) {
+      .hide-on-mobile {
+            display: none;
+      }
+}
+
+
+@media screen and (min-width: 1200px)  {
+
+      h1 {
+            font-size: 40px;
+      }
+
+      .card {
+            max-width: 925px;
+            margin: auto;
+            display:flex;
+            margin-left: 19%;
+      }
+
+      .card .hide-on-desktop {
+            display:none;
+      }
+
+      .card__image {
+            position: relative;
+            top: 0; 
+            left:0; 
+            height: 100%;
+            z-index: 10;
+            overflow: hidden;
+
+      }
+
+      .card__image .hide-on-mobile {
+            position: relative;
+            top: 75px;
+            left: -80px;
+      }
+
+
+      .responsive-overlay:after {
+            content: "";
+            background: url(images/bg-pattern-desktop.svg) center no-repeat;
+            background-size: contain;
+            position: absolute;
+            height: 1000px;
+            width: 1000px;
+            top: -322px;
+            left: -604px;
+            z-index: -1;
+      }
+
+
+      .card__image_box {
+            position: absolute;
+            top: 209px;
+            left: -93px;
+            display: block;
+            z-index: 100;
+        
+      }
+
+      .card__container {
+            padding: 70px 107px 70px 10px;
+      }
+      
+      .card__container .card__header {
+            text-align: left;
+            padding-top:0;
+            padding-bottom: 0;
+      }
+
+      .box_content-answer {
+            padding-right: 0px;
+      }
+      
+
+
+}
